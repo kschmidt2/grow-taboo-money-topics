@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0'
+            googleSpreadsheetKey: '1SbtPXvV_DzA9DVdcawFB9h-Rr8wNXaJVyQoaP01nuLM'
         },
         // for bar charts only
         plotOptions: {
@@ -41,11 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } 
         },
         legend: {
-            align: 'right',
-            symbolRadius: 0,
-            verticalAlign: 'top',
-            x: 10,
-            itemMarginTop: -10
+            enabled: false
         },
         xAxis: {
             labels: {
@@ -60,14 +56,18 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: {
                 useHTML: true,
                 overflow: 'allow'
-            }
+            },
+            tickAmount: 5
         },
         credits: {
             enabled: false
         },
         tooltip: {
             shadow: false,
-            padding: 10
+            padding: 10,
+            formatter: function () {
+                return this.y + "%";
+            }
         },
         responsive: {
             rules: [{
@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
               },
               chartOptions: {
                 chart: {
-                  spacingRight: 10
+                  spacingRight: 7,
+                  spacingLeft: -1
                 },
                 legend: {
                     align: 'left',
